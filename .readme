@@ -12,7 +12,27 @@ boundGreet(); // outout
 boundGreet.call({ name: "Charlie" });   // output
 boundGreet.apply({ name: "Dave" });     // output
 
+--------------------------------------------------------------------
 
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+(async function () {
+  console.log("D");
+  await null;
+  console.log("E");
+})();
+
+console.log("F");
+
+---------------------------------------------------------------------
 
 const input = {
   name: "root",
