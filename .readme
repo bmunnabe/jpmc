@@ -34,6 +34,31 @@ console.log("F");
 
 ---------------------------------------------------------------------
 
+async function foo() {
+  console.log("A");
+  await bar();
+  console.log("B");
+}
+
+async function bar() {
+  console.log("C");
+  setTimeout(() => {
+    console.log("D");
+  }, 0);
+}
+
+foo();
+console.log("E");
+
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
 const input = {
   name: "root",
   type: "folder",
