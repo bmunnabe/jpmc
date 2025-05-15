@@ -1,0 +1,47 @@
+const person = {
+  name: "Alice",
+  greet: function(greeting) {
+    console.log(`${greeting}, I'm ${this.name}`);
+  }
+};
+
+const anotherPerson = { name: "Bob" };
+
+const boundGreet = person.greet.bind(anotherPerson, "Hello");
+boundGreet(); // outout
+boundGreet.call({ name: "Charlie" });   // output
+boundGreet.apply({ name: "Dave" });     // output
+
+
+
+const input = {
+  name: "root",
+  type: "folder",
+  children: [
+    {
+      name: "src",
+      type: "folder",
+      children: [
+        { name: "index.js", type: "file" },
+        { name: "App.js", type: "file" },
+      ]
+    },
+    {
+      name: "public",
+      type: "folder",
+      children: [
+        { name: "index.html", type: "file" }
+      ]
+    },
+    { name: "package.json", type: "file" }
+  ]
+};
+
+// output
+root 
+  --src
+    --index.js
+    --App.js
+  --public
+    --index.html
+    --package.json
